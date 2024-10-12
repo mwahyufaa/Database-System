@@ -1,2 +1,2 @@
-# Kalkulator-PKP
-Program ini dibuat menggunakan bahasa C++ dengan tujuan untuk mengkalkulasikan PKP (Penghasilan Kena Pajak) dari data penghasilan bulanan pegawai. (dalam proses pengembangan)
+# Database Login System
+Database sangat diperlukan dalam penyimpanan data.
