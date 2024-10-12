@@ -20,6 +20,7 @@ public:
     long getEmployeeId() const {
         return employeeId;
     }
+
     //verify password
     bool verifyPassword(const std::string& password) const {
     return loginPassword == password; // Compare the passwords
@@ -46,7 +47,7 @@ public:
     void displayEmployeeDetails() const {
         std::cout << "Employee ID: " << employeeId << "\n";
         std::cout << "Employee Name: " << employeeFirstName << " " << employeeLastName << "\n";
-        std::cout << "Employee Salary: " << employeeSalary << "\n";
+        std::cout << "Employee Salary: " << "Rp." << employeeSalary << ".00" << "\n";
         std::cout << "Hired Date: " 
                   << std::put_time(&employeeHiredDate, "%d/%m/%Y") << "\n"; // Format: DD/MM/YYYY
     }
@@ -54,14 +55,17 @@ public:
 
 int main(){
     std::tm hireDate1 = {};
-    hireDate1.tm_mday = 15;         // 15th day
-    hireDate1.tm_mon = 5;           // June (month is 0-based, so 5 = June)
-    hireDate1.tm_year = 2020 - 1900; // Year 2020 (tm_year is year since 1900)
+    //Day
+    hireDate1.tm_mday = 15;   
+    //Month      
+    hireDate1.tm_mon = 5;  
+    //Year
+    hireDate1.tm_year = 2020 - 1900; 
 
     std::tm hireDate2 = {};
-    hireDate2.tm_mday = 1;         // 1st day
-    hireDate2.tm_mon = 9;          // October (0-based, so 9 = October)
-    hireDate2.tm_year = 2019 - 1900; // Year 2019
+    hireDate2.tm_mday = 1;         
+    hireDate2.tm_mon = 9;          
+    hireDate2.tm_year = 2019 - 1900; 
 
     std::tm hireDate3 ={};
     hireDate3.tm_mday = 3;
