@@ -10,7 +10,7 @@ private:
     long employeeId;
     double employeeSalary;
     std::tm employeeHiredDate;
-
+    
 public:
     //constructor to initialize employee data
    EmployeeData(long employeeid, std::string firstName, std::string lastName, std::string loginpassword, std::tm hiredDate, double salary)
