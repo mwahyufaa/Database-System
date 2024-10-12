@@ -44,9 +44,9 @@ public:
     }
 
     void displayEmployeeDetails() const {
+        std::cout << "Employee ID: " << employeeId << "\n";
         std::cout << "Employee Name: " << employeeFirstName << " " << employeeLastName << "\n";
         std::cout << "Employee Salary: " << employeeSalary << "\n";
-        std::cout << "Employee ID: " << employeeId << "\n";
         std::cout << "Hired Date: " 
                   << std::put_time(&employeeHiredDate, "%d/%m/%Y") << "\n"; // Format: DD/MM/YYYY
     }
@@ -63,13 +63,19 @@ int main(){
     hireDate2.tm_mon = 9;          // October (0-based, so 9 = October)
     hireDate2.tm_year = 2019 - 1900; // Year 2019
 
-    EmployeeData employee1(25,"John", "Doe", "B321-", hireDate1, 320000.00);
-    EmployeeData employee2(31, "Alexa", "Baker", "A123+", hireDate2, 400000.00);
+    std::tm hireDate3 ={};
+    hireDate3.tm_mday = 3;
+    hireDate3.tm_mon = 10;
+    hireDate3.tm_year = 2024-1900;
 
-    std::vector<EmployeeData> employeeDatabase = {employee1, employee2};
+    EmployeeData employee1(25,"Pannes", "Diba", "B321-", hireDate1, 320000.00);
+    EmployeeData employee2(31, "Aliyyah", "Haka", "A123+", hireDate2, 400000.00);
+    EmployeeData employee3(109, "Wahyu", "Fajrilah", "B111C", hireDate3, 200000.00);
+
+    std::vector<EmployeeData> employeeDatabase = {employee1, employee2, employee3};
 
     //attempt login
-    if (employee1.loginAuthorization()){
+    if (employee3.loginAuthorization()){
         std::cout << "\n Access to Company Database";
         for (const auto& employee : employeeDatabase){
             employee.displayEmployeeDetails();
